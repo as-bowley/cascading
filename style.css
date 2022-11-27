@@ -25,7 +25,6 @@ header {
 
 article {
   flex: 1;
-  /* padding: 30px 200px; */
 }
 
 .navbar h1 {
@@ -40,10 +39,35 @@ article {
 
 .navbar ul li {
   margin: 0 10px;
+  transition: transform 0.2s ease-out;
+}
+
+.navbar ul li:hover {
+  transform: scale(1.1);
 }
 
 .navbar ul li a {
   cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f9faf8;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.navbar ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .hero {
@@ -80,6 +104,12 @@ article {
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.hero .hero__text button:hover {
+  transform: scale(1.03);
 }
 
 .hero img {
@@ -167,7 +197,7 @@ article {
   align-items: center;
   justify-content: space-between;
   border-radius: 8px;
-  padding: 50px 100px;
+  padding: 30px 100px;
 }
 
 .cta .cta__block .cta__block__text {
@@ -181,6 +211,11 @@ article {
   font-weight: 700;
   padding: 10px 0;
   cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.cta .cta__block button:hover {
+  transform: scale(1.03);
 }
 
 .cta .cta__block button a {
@@ -197,4 +232,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+footer a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--cta-bg-color);
 }
