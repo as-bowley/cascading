@@ -42,14 +42,20 @@ article {
   transition: transform 0.2s ease-out;
 }
 
+.navbar ul li:first-child a {
+  text-decoration: underline;
+}
+
 .navbar ul li:hover {
   transform: scale(1.1);
 }
 
 .navbar ul li a {
+  color: #f9faf8;
   cursor: pointer;
   display: inline-block;
   position: relative;
+  text-decoration: none;
 }
 
 .navbar ul li a::after {

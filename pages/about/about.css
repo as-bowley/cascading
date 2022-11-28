@@ -1,0 +1,225 @@
+:root {
+  --hero-main-bg-color: #1f2937;
+  --hero-main-font-color: #f9faf8;
+  --hero-secondary-font-color: #e5e7eb;
+  --cta-bg-color: #3882f6;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif, Arial;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+header {
+  background-color: var(--hero-main-bg-color);
+  color: var(--hero-main-font-color);
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 200px;
+}
+
+.navbar h1 {
+  font-size: 24px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  color: var(--hero-secondary-font-color);
+}
+
+.navbar ul li {
+  margin: 0 10px;
+  transition: transform 0.2s ease-out;
+}
+
+.navbar ul li:nth-child(2) a {
+  text-decoration: underline;
+}
+
+.navbar ul li:hover {
+  transform: scale(1.1);
+}
+
+.navbar ul li a {
+  color: #f9faf8;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f9faf8;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.navbar ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  padding: 0 200px;
+  flex: 1;
+}
+
+.about h1 {
+  font-size: 36px;
+  color: var(--hero-main-bg-color);
+  margin: 0;
+}
+
+.about figure {
+  margin: 50px 0 50px 0;
+}
+
+.about figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about .about__text {
+  color: var(--hero-main-bg-color);
+  line-height: 1.2rem;
+}
+
+.about .about__text small a {
+  color: var(--cta-bg-color);
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: var(--cta-bg-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline .timeline__container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timeline .timeline__container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #ffff;
+  border: 4px solid var(--cta-bg-color);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline__container--left {
+  left: 0;
+}
+
+.timeline__container--right {
+  left: 50%;
+}
+
+.timeline__container--left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--hero-main-bg-color);
+}
+
+.timeline__container--right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--hero-main-bg-color) transparent transparent;
+}
+
+.timeline__container--right::after {
+  left: -16px;
+}
+
+.timeline .timeline__container__content {
+  background-color: var(--hero-main-bg-color);
+  color: var(--hero-main-font-color);
+  position: relative;
+  border-radius: 8px;
+  padding: 20px 30px;
+}
+
+.timeline .timeline__container__content h4 {
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--hero-secondary-font-color);
+}
+
+.timeline .timeline__container__content h2 {
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.timeline .timeline__container__content p {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: var(--hero-secondary-font-color);
+}
+
+footer {
+  background-color: var(--hero-main-bg-color);
+  min-height: 50px;
+  padding: 0 200px;
+  color: var(--hero-main-font-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--cta-bg-color);
+}
