@@ -24,6 +24,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 200px;
+  position: sticky;
+  top: 0;
+  z-index: 11;
 }
 
 .navbar h1 {
@@ -77,19 +80,22 @@ header {
 
 article {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.4fr;
   padding: 0 200px;
   flex: 1;
+}
+
+.about {
+  margin-right: 80px;
 }
 
 .about h1 {
   font-size: 36px;
   color: var(--hero-main-bg-color);
-  margin: 0;
 }
 
 .about figure {
-  margin: 50px 0 50px 0;
+  margin: 20px 0 40px 0;
 }
 
 .about figure img {
@@ -98,9 +104,17 @@ article {
   border-radius: 8px;
 }
 
+.about figure figcaption {
+  color: var(--hero-main-bg-color);
+}
+
+.about figure figcaption a {
+  color: var(--cta-bg-color);
+}
+
 .about .about__text {
   color: var(--hero-main-bg-color);
-  line-height: 1.2rem;
+  line-height: 25px;
 }
 
 .about .about__text small a {
@@ -109,8 +123,20 @@ article {
 
 .timeline {
   position: relative;
+  background-color: var(--hero-secondary-font-color);
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.timeline h1 {
+  position: relative;
+  font-size: 36px;
+  padding: 36px 0 10px 0;
+  margin: 0 36px 28px 36px;
+  color: var(--hero-main-bg-color);
+  border-bottom: 4px solid var(--cta-bg-color);
+  background-color: var(--hero-secondary-font-color);
+  z-index: 10;
 }
 
 .timeline::after {
@@ -204,8 +230,17 @@ article {
 
 .timeline .timeline__container__content p {
   font-size: 0.8rem;
-  line-height: 1.2rem;
+  line-height: 18px;
   color: var(--hero-secondary-font-color);
+}
+
+.btt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 footer {
