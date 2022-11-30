@@ -74,7 +74,7 @@ header {
   transform-origin: bottom left;
 }
 
-article {
+main {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   padding: 0 200px;
