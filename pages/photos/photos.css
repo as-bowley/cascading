@@ -86,7 +86,7 @@ article {
   align-items: center;
   justify-items: center;
   padding: 0 200px;
-  max-height: 83vh;
+  max-height: 90vh;
 }
 
 .image__container {
@@ -130,11 +130,19 @@ article {
   background-size: contain;
 }
 
-.lightbox span small {
+.lightbox .lightbox__desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  bottom: 10;
+  bottom: 5%;
+}
+
+.lightbox .lightbox__desc small {
   color: var(--hero-main-font-color);
-  text-decoration: none;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 8px;
 }
 
 footer {
